@@ -5,6 +5,7 @@ const geocode = require('../utils/geocode')
 const forecast = require('../utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 9000
 
 //This is the definition paths for express config
 const mainPage = path.join(__dirname, "../public")
@@ -104,8 +105,8 @@ app.get('*', (req, res) =>{
     })
 })
 
-app.listen(9000 , () =>{
-    console.log("Server is up on port 9000.");
+app.listen(port , () =>{
+    console.log("Server is up on port " + port + ".");
 })
 
 // const weatherForm = document.querySelector('form')
